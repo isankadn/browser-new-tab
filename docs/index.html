@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Quiet Tab is a calm, local-first browser new tab dashboard with everyday widgets, personal themes, and opt-in online features.">
+  <meta name="theme-color" content="#f8fafc">
+  <title>Quiet Tab — A little space for what matters</title>
+  <link rel="canonical" href="https://isankadn.github.io/browser-new-tab/">
+  <link rel="stylesheet" href="site.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c4a6e'/%3E%3Cpath d='M6 22V10h6l4 9 4-9h6v12' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Quiet Tab home">
+      <svg aria-hidden="true" viewBox="0 0 32 32" width="32" height="32" fill="none"><path d="M5 22V10h7l4 9 4-9h7v12M10 26h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Quiet Tab</span>
+    </a>
+    <nav aria-label="Main navigation"><a href="#features">Features</a><a href="#install">Install</a><a href="https://github.com/isankadn/browser-new-tab">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">A local-first new tab dashboard</p>
+      <h1 id="hero-title">A little space for<br>what matters.</h1>
+      <p class="hero-description">Your clock, links, notes, and tasks. A calm place to begin, with only the widgets you choose.</p>
+      <div class="hero-actions"><a class="button primary" href="#install">Try the development build <span aria-hidden="true">→</span></a><a class="button secondary" href="https://github.com/isankadn/browser-new-tab">Explore the source</a></div>
+      <p class="release-note">In active development. Install locally; no store release is advertised.</p>
+    </section>
+    <figure class="preview">
+      <img src="dashboard.webp" alt="Quiet Tab development dashboard showing its centered branding, clock, search, and local widgets." width="1440" height="900" fetchpriority="high">
+      <figcaption>Actual development dashboard. The website is an overview, not a replacement for installing the extension.</figcaption>
+    </figure>
+    <section id="features" class="section" aria-labelledby="features-title">
+      <div class="section-heading"><p class="eyebrow">Useful, not overwhelming</p><h2 id="features-title">Make room for your everyday tools.</h2></div>
+      <div class="feature-grid">
+        <article><span class="feature-number">01</span><h3>Start with the essentials</h3><p>Clock and time zones, your search provider, and shortcuts to the places you use.</p></article>
+        <article><span class="feature-number">02</span><h3>Keep an idea close</h3><p>Lightweight notes and todo lists, saved on your device and usable offline.</p></article>
+        <article><span class="feature-number">03</span><h3>Make it your space</h3><p>A full-width, mobile-responsive layout. Add, move, or hide widgets in Customize mode.</p></article>
+        <article><span class="feature-number">04</span><h3>A softer palette</h3><p>Light, dark, or system mode. Choose Ocean, Forest, Sand, Terracotta, or Graphite.</p><div class="palette" aria-label="Ocean, Forest, Sand, Terracotta, and Graphite color templates"><span class="ocean"></span><span class="forest"></span><span class="sand"></span><span class="terracotta"></span><span class="graphite"></span></div></article>
+        <article><span class="feature-number">05</span><h3>A fresh view, when you want</h3><p>Local photos or opt-in automatic wallpapers. Optional city weather, with clear offline states.</p></article>
+        <article><span class="feature-number">06</span><h3>Connect notes on your terms</h3><p>Opt-in Google Drive note sync and sharing. Local notes never require a Google account.</p></article>
+      </div>
+    </section>
+    <section id="install" class="section install-section" aria-labelledby="install-title">
+      <div class="section-heading"><p class="eyebrow">Get started</p><h2 id="install-title">Run a development checkout.</h2><p>The full dashboard is being developed locally and is not yet available as a published download. The public repository may still contain the original boilerplate; the steps below apply to a dashboard development checkout.</p></div>
+      <ol class="install-steps">
+        <li><h3>Use the dashboard checkout</h3><p>Start with a Quiet Tab checkout containing <code>manifest.json</code>, <code>app.js</code>, and <code>widgets.js</code>. Follow the <a href="https://github.com/isankadn/browser-new-tab">GitHub repository</a> for source updates.</p></li>
+        <li><h3>Load it in Chrome</h3><p>Open <code>chrome://extensions</code>, turn on <strong>Developer mode</strong>, and choose <strong>Load unpacked</strong>. Select the repository folder containing <code>manifest.json</code>.</p></li>
+        <li><h3>Open a new tab</h3><p>Use the Customize icon in the bottom-right corner to add widgets and change the appearance. Choose Done to hide editing controls.</p></li>
+      </ol>
+      <details><summary>Other browsers and optional services</summary><div class="details-content"><p>Browser packages can be generated with <code>node scripts/package.mjs chromium</code>, <code>firefox</code>, or <code>safari</code>. Firefox distribution requires Mozilla signing. Safari requires Apple packaging/signing and explicit new-tab selection. These packages do not establish verified browser support; responsive layout does not guarantee mobile extension installation.</p><p>Google Drive needs publisher-owned OAuth configuration. Safari additionally needs a real native authentication bridge. Online wallpapers request provider access only when enabled. Open-Meteo's keyless weather service is for permitted non-commercial use.</p></div></details>
+    </section>
+    <section class="privacy section" aria-labelledby="privacy-title"><div><p class="eyebrow">Local by default</p><h2 id="privacy-title">Your tools. Your space.</h2></div><p>No account is needed for the core dashboard. Network features are explicit opt-ins, not a condition for using your local notes, tasks, or shortcuts. This website uses no JavaScript, analytics, or third-party fonts.</p></section>
+  </main>
+  <footer class="site-footer"><span>Quiet Tab · Built for a calmer start.</span><div><a href="https://github.com/isankadn/browser-new-tab#readme">Documentation</a><a href="https://github.com/isankadn/browser-new-tab/issues">Feedback</a><a href="https://github.com/isankadn/browser-new-tab/blob/main/LICENSE">License</a></div></footer>
+</body>
+</html>

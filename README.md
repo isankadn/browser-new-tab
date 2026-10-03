@@ -1,19 +1,33 @@
-# New Tab Boilerplate
+# Quiet Tab
 
-A minimal Chrome extension that shows a custom page whenever you open a new tab.
+A calm, local-first new tab dashboard: your daily tools without the clutter.
 
-## Get started
+This overview describes the active development checkout. Public source may lag ongoing application changes; there is no advertised store release.
 
-1. Clone this repository and open `chrome://extensions` in Google Chrome.
-2. Turn on **Developer mode** in the top-right corner.
-3. Click **Load unpacked** and select this repository's folder (the one containing `manifest.json`).
-4. Open a new tab to see **Hello, world!**
+- Clock/time zones, search, shortcuts, notes, todos, and opt-in weather.
+- Full-width responsive layout, light/dark modes, five color templates, and local or automatic photo backgrounds.
+- Customize from the bottom-right icon; editing controls stay hidden during normal use.
+- Local notes work offline. Google Drive sync/sharing is opt-in and requires publisher OAuth setup.
 
-Edit `newtab.html` to customize the page. After changing a file, click the extension's **Reload** button on `chrome://extensions`, then open or refresh a new tab.
+## Try the development build
 
-## Files
+1. Use a development checkout containing `app.js` and `widgets.js`, then open `chrome://extensions`.
+2. Enable **Developer mode**, choose **Load unpacked**, and select this repository's folder.
+3. Open a new tab. Use **Customize** to add widgets or change the appearance.
 
-- `manifest.json` declares a Manifest V3 extension and points Chrome's new tab override to `newtab.html`.
-- `newtab.html` contains the page's HTML and CSS.
+No dependencies or build step are needed to run the extension. After editing files, reload it from the extensions page.
 
-No dependencies or build step are required.
+## Browser packages
+
+Run `node scripts/package.mjs chromium` (or `firefox` / `safari`) to create `dist/<browser>`.
+Firefox distribution requires Mozilla signing. Safari requires Apple conversion/signing and explicit new-tab selection; Drive also needs a native OAuth bridge. Packages are not proof of verified browser support.
+
+Weather's keyless Open-Meteo service is for permitted non-commercial use. Online wallpapers and weather request provider access only when enabled; the local dashboard needs no account.
+
+## More
+
+- [Website](https://isankadn.github.io/browser-new-tab/) — overview and installation.
+- Requirements and architecture: `REQUIREMENTS.md` in the development checkout.
+- Optional widget candidates: `requirements/OPTIONAL_WIDGETS.md` in the development checkout.
+
+The website is static HTML/CSS in `docs/`, published through GitHub Pages from `main` → `/docs`. It is an informational site, not the extension itself.
